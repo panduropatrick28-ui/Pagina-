@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Moraima López</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+ <style>
+/* ==========================================
+   DISEÑO FINAL — Celular + PC + Todas las máquinas
+========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+body {
+    background-color: #E8F5E9;
+    color: #263238;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ---------- ENCABEZADO ---------- */
+.header {
+    background-color: #E8F5E9;
+    padding: 20px 0 30px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1B5E20;
+}
+
+.navbar { display: none; }
+
+.fa-cart-shopping {
+    color: #1B5E20 !important;
+    font-size: 22px;
+}
+
+/* ---------- CABECERA ---------- */
+.header-content {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.header-txt h1 {
+    font-size: 36px;
+    color: #1B5E20;
+    margin-bottom: 8px;
+}
+
+.header-txt p {
+    color: #37474F;
+    font-size: 15px;
+    margin-bottom: 20px;
+    max-width: 500px;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-1 {
+    padding: 10px 26px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-principal {
+    background-color: #2E7D32;
+    color: #FFFFFF !important;
+}
+
+.btn-principal:hover {
+    background-color: #1B5E20;
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: #2E7D32 !important;
+    border: 2px solid #2E7D32;
+}
+
+.btn-secundario:hover {
+    background-color: #2E7D32;
+    color: #FFFFFF !important;
+}
+
+/* ---------- PRODUCTOS — Tarjetas ---------- */
+.products {
+    background-color: transparent;
+    padding: 20px 0 60px;
+}
+
+.products h2 { display: none; }
+
+.box-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.box {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 15px;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-3px);
+}
+
+.box img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+}
+
+.product-txt {
+    text-align: left;
+}
+
+.product-txt h3 {
+    color: #1B5E20;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.product-txt p {
+    color: #546E7A;
+    font-size: 13px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.precio {
+    color: #1B5E20;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 8px 0 12px;
+}
+
+.btn-3 {
+    display: inline-block;
+    background-color: #2E7D32;
+    color: #FFFFFF !important;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.btn-3:hover {
+    background-color: #1B5E20;
+}
+
+/* ---------- PIE DE PÁGINA ---------- */
+.footer {
+    background-color: #1B5E20 !important;
+    color: #FFFFFF !important;
+    padding: 30px 20px !important;
+    margin-top: 40px !important;
+}
+
+.footer .container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+.footer-content {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 30px !important;
+}
+
+.footer .link {
+    display: block !important;
+}
+
+.footer .link h3 {
+    color: #FFFFFF !important;
+    font-size: 18px !important;
+    margin-bottom: 15px !important;
+    font-weight: bold !important;
+}
+
+.footer .link ul {
+    list-style: disc !important;
+    padding-left: 20px !important;
+}
+
+.footer .link li {
+    margin-bottom: 8px !important;
+    list-style: disc !important;
+}
+
+.footer .link a {
+    color: #000000 !important;
+    text-decoration: none !important;
+    font-size: 15px !important;
+}
+
+.footer .link a:hover {
+    color: #E8F5E9 !important;
+    text-decoration: underline !important;
+}
+
+/* 📱 Tablet: 2 columnas */
+@media (max-width: 900px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* 📱 Celular: 1 columna centrada */
+@media (max-width: 500px) {
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        text-align: left !important;
+    }
+    .footer .link ul {
+        padding-left: 25px !important;
+    }
+}
+</style>
+
+</head>
+<body>
+    <!-- ENCABEZADO -->
+    <header class="header">
+        <div class="menu container">
+            <a href="#" class="logo">Moraima</a>
+            
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="imagen/menu.png" class="menu-icono" alt="Menú">
+            </label>
+            
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div>
+                <ul>
+                    <li class="submenu">
+                        <i id="img-carrito" class="fa-solid fa-cart-shopping" style="font-size: 26px; color: #2E7D32; cursor: pointer;"></i>
+                        <div id="carrito">
+                            <table id="lista-carrito">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th>Unidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <a href="#" id="vaciar-carrito">Vaciar carrito</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-content container">
+            <div class="header-txt">
+                <span>Bienvenido a nuestra tienda</span>
+                <h1>Tiens</h1>
+                <p>Calidad premium y precios justos para tu salud y bienestar</p>
+                <div class="buttons">
+                    <a href="#productos" class="btn-1 btn-principal">Ver Productos</a>
+                    <a href="https://wa.me/51944953206?text=Hola!%20Me%20interesan%20los%20productos" target="_blank" class="btn-1 btn-secundario">Consultar</a>
+                </div>
+            </div>
+            <div class="header-img">
+                <a href="#" class="boton-bolsa">
+                    <svg class="icono-bolsa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <path d="M3 6h18"></path>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        <path d="M12 15l2-2"></path>
+                    </svg>
+                    <span>Bolsa de compras</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN DE OFERTAS -->
+    <section class="oferts container">
+        <div class="ofert-1 b1">
+            <div class="ofert-txt">
+                <h3>Cilvaris</h3>
+                <p>Dispositivo con radiofrecuencia para el rejuvenecimiento facial y efecto lifting</p>
+            </div>
+            <div class="ofert-img">
+                <img src="imagen/Cilvaris.png" alt="Cilvaris">
+                <a href="#">Leer más</a>
+            </div>
+        </div>
+        <div class="ofert-1 b2">
+            <div class="ofert-txt">
+                <h3>Masajeador Capilar</h3>
+                <p>Estimulación inteligente que mejora la circulación del cuero cabelludo</p>
+            </div>
+            <div class="ofert-img">
+                <img src="imagen/Masajeador capilar.png" alt="Masajeador Capilar">
+                <a href="#">Leer más</a>
+            </div>
+        </div>
+        <div class="ofert-1 b3">
+            <div class="ofert-txt">
+                <h3>Masajeador de Circulación</h3>
+                <p>Estimula el flujo sanguíneo de forma natural, alivia pesadez y cansancio en piernas</p>
+            </div>
+            <div class="ofert-img">
+                <img src="imagen/Masajedor de circulacion sanginia.webp" alt="Masajeador de Circulación">
+                <a href="#">Leer más</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <main class="products container" id="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="box-container" id="lista-1">
+
+            <!-- 1. Orecare -->
+            <div class="box">
+                <img src="imagen/WhatsApp Image 2026-09-23 at 10.12.33 AM (1).jpeg" alt="Orecare">
+                <div class="product-txt">
+                    <h3>Orecare</h3>
+                    <p>Cuidado bucal integral: limpia, fortalece encías y devuelve brillo natural a tus dientes</p>
+                    <p class="precio">S/ 48.00</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="1">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <!-- 2. CordyCafé -->
+            <div class="box">
+                <img src="imagen/WhatsApp Image 2026-09-23 at 10.12.33 AM (2).jpeg" alt="CordyCafé">
+                <div class="product-txt">
+                    <h3>CordyCafé</h3>
+                    <p>Café enriquecido con Cordyceps: energía sostenida, concentración y bienestar respiratorio</p>
+                    <p class="precio">S/ 92.00</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="2">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <!-- 3. Cordyceps Cápsulas -->
+            <div class="box">
+                <img src="imagen/WhatsApp Image 2026-09-23 at 10.12.34 AM (1).jpeg" alt="Cordyceps 500 mg">
+                <div class="product-txt">
+                    <h3>Cordyceps 500 mg</h3>
+                    <p>Fortalece defensas, pulmones, riñones y combate la fatiga crónica</p>
+                    <p class="precio">S/ 165.00</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="3">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <!-- 4. Espirulina -->
+            <div class="box">
+                <img src="imagen/WhatsApp Image 2026-09-23 at 10.12.34 AM.jpeg" alt="Espirulina">
+                <div class="product-txt">
+                    <h3>Espirulina</h3>
+                    <p>Nutrición completa: energía, defensas y desintoxicación natural del organismo</p>
+                    <p class="precio">S/ 99.00</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="5">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <!-- 5. Chitosa -->
+            <div class="box">
+                <img src="imagen/WhatsApp Image 2026-09-23 at 10.12.35 AM (1).jpeg" alt="Chitosa">
+                <div class="product-txt">
+                    <h3>Chitosa</h3>
+                    <p>Control de peso, colesterol y salud digestiva con fibra natural</p>
+                    <p class="precio">S/ 132.00</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="6">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <!-- 6. Calcio con Colágeno -->
+            <div class="box">
+                <img src="imagen/WhatsApp Image 2026-09-23 at 10.12.35 AM.jpeg" alt="Calcio con Colágeno">
+                <div class="product-txt">
+                    <h3>Calcio con Colágeno</h3>
+                    <p>Fortalece huesos, articulaciones y mantiene la flexibilidad del sistema óseo</p>
+                    <p class="precio">S/ 165.00</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="7">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <!-- 7. Té TianShi -->
+            <div class="box">
+                <img src="imagen/WhatsApp Image 2026-09-23 at 10.12.36 AM (1).jpeg" alt="Té TianShi">
+                <div class="product-txt">
+                    <h3>Té TianShi</h3>
+                    <p>Desintoxicante y digestivo natural: limpia el organismo con suavidad</p>
+                    <p class="precio">S/ 89.90</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="8">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <!-- 8. Zinc Proteína -->
+            <div class="box">
+                <img src="imagen/WhatsApp Image 2026-09-23 at 10.12.36 AM.jpeg" alt="Zinc Proteína">
+                <div class="product-txt">
+                    <h3>Zinc Proteína</h3>
+                    <p>Crecimiento saludable, defensas fuertes y regeneración celular</p>
+                    <p class="precio">S/ 115.00</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="9">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <!-- 9. Colágeno Tiens -->
+            <div class="box">
+                <img src="imagen/WhatsApp Image 2026-09-23 at 10.14.45 AM.jpeg" alt="Colágeno Forte + Ginseng">
+                <div class="product-txt">
+                    <h3>Colágeno Forte + Ginseng</h3>
+                    <p>Piel firme, articulaciones protegidas y energía renovada con cada sobre</p>
+                    <p class="precio">S/ 152.10</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="10">Agregar al carrito</a>
+
+                </div>
+            </div>
+
+            <!-- 10. SpaKare -->
+            <div class="box">
+                <img src="imagen/WhatsApp Image 2026-09-23 at 10.16.22 AM.jpeg" alt="SpaKare Breathing Element">
+                <div class="product-txt">
+                    <h3>SpaKare</h3>
+                    <p>Aromaterapia natural: despeja vías respiratorias, calma y relaja el sistema nervioso</p>
+                    <p class="precio">S/ 91.00</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="11">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="imagen/Cilvaris.jpg" alt="Cilvaris gel">
+                <div class="product-txt">
+                    <h3>Cilvaris gel</h3>
+                    <p>dispositivo cosmético facial de alta tecnología que utiliza ondas de radiofrecuencia para tensar la piel, activar el colágeno y lograr un efecto lifting sin dolor</p>
+                    <p class="precio">S/ 89.00</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="12">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="imagen/Luteina.webp" alt="Luteina Vision">
+                <div class="product-txt">
+                    <h3>Luteina Vision</h3>
+                    <p>es un suplemento de la familia TIENS que refuerza y cuida a los ojos desde el interior, la formula avanzada y natural</p>
+                    <p class="precio">S/ 80.00</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="13">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="imagen/Orecare sin flour.jpeg" alt="Orecare sin fluor">
+                <div class="product-txt">
+                    <h3>Orecare sin fluor</h3>
+                    <p>Ayuda a proteger dientes y encías, brindando limpieza, aliento fresco y cuidado herbal diario para toda la familia</p>
+                    <p class="precio">S/ 80.00</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="13">Agregar al carrito</a>
+                </div>
+            </div>
+            <!-- 15. Cilvaris -->
+<div class="box">
+    <img src="imagen/Cilvaris.png" alt="Cilvaris">
+    <div class="product-txt">
+        <h3>Cilvaris</h3>
+        <p>Dispositivo con radiofrecuencia para el rejuvenecimiento facial y efecto lifting</p>
+        <p class="precio">$965.00</p>
+        <a href="#" class="agregar-carrito btn-3" data-id="15">Agregar al carrito</a>
+    </div>
+</div>
+
+<!-- 16. Masajeador Capilar -->
+<div class="box">
+    <img src="imagen/Masajeador Capilar.png" alt="Masajeador Capilar">
+    <div class="product-txt">
+        <h3>Masajeador Capilar</h3>
+        <p>Estimulación inteligente que mejora la circulación del cuero cabelludo</p>
+        <p class="precio">$405.00</p>
+        <a href="#" class="agregar-carrito btn-3" data-id="16">Agregar al carrito</a>
+    </div>
+</div>
+
+<!-- 17. Masajeador de Circulación -->
+<div class="box">
+    <img src="imagen/Masajedor de circulacion sanginia.webp" alt="Masajeador de Circulación">
+    <div class="product-txt">
+        <h3>Masajeador de Circulación</h3>
+        <p>Estimula el flujo sanguíneo de forma natural, alivia pesadez y cansancio en piernas</p>
+        <p class="precio">$999.00</p>
+        <a href="#" class="agregar-carrito btn-3" data-id="17">Agregar al carrito</a>
+    </div>
+</div>
+
+            <!-- 11. Fibra Tiens -->
+            <div class="box">
+                <img src="imagen/WhatsApp Image 2026-09-28 at 12.00.57 PM.jpeg" alt="Fibra Tiens">
+                <div class="product-txt">
+                    <h3>Fibra Tiens</h3>
+                    <p>Regula el tránsito intestinal, da saciedad y mejora tu digestión de forma natural</p>
+                    <p class="precio">S/ 127.00</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="12">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <!-- 12. Digesfit -->
+            <div class="box">
+                <img src="imagen/WhatsApp Image 2026-09-28 at 12.00.58 PM (1).jpeg" alt="Digesfit Bebida">
+                <div class="product-txt">
+                    <h3>Digesfit</h3>
+                    <p>Mezcla de frutas y verduras: desintoxica, equilibra y recarga tu energía</p>
+                    <p class="precio">S/ 138.00</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="13">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <!-- 13. Acneniver -->
+            <div class="box">
+                <img src="imagen/tiens_airiz.jpg" alt="Toallitas Acneniver">
+                <div class="product-txt">
+                    <h3>Acneniver</h3>
+                    <p>Protección diaria suave, fresca y segura — cuida tu intimidad sin irritaciones</p>
+                    <p class="precio">S/ 35.00</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="14">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <!-- 14. Lumaniver -->
+            <div class="box">
+                <img src="imagen/toallas-airiz.png" alt="Toallitas Lumaniver">
+                <div class="product-txt">
+                    <h3>Lumaniver</h3>
+                    <p>Protección nocturna extra larga: absorción profunda y sueño sin preocupaciones</p>
+                    <p class="precio">S/ 42.00</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="15">Agregar al carrito</a>
+                </div>
+            </div>
+
+        </div>
+        <div style="display: flex; justify-content: center; margin: 30px 0;">
+    <div class="btn-2" id="load-more" onclick="cargarMas()">Cargar más</div>
+</div>
+    </main>
+
+    <!-- TESTIMONIALES -->
+    <section class="testimonial container">
+        <span>Testimoniales</span>
+        <h2>Qué opinan nuestros clientes</h2>
+        <p class="subtitulo">Comentarios de personas que ya confiaron en Tiens</p>
+        
+        <div class="testimonial-content">
+            <div class="testimonial-1">
+                <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                <p>"Los productos Tiens son excelentes. Compré el Colágeno y he notado gran cambio en mi piel y energía. La atención fue muy amable y llegó rápido."</p>
+                <h4>María — Lima</h4>
+                <span class="etiqueta">Cliente satisfecha</span>
+            </div>
+            <div class="testimonial-1">
+                <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                <p>"El CordyCafé me encanta, me da energía sin temblores. La calidad se nota y el trato personalizado hace toda la diferencia. Recomiendo al 100%."</p>
+                <h4>Carlos — Lima</h4>
+                <span class="etiqueta">Cliente feliz</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            
+            <div class="link">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="link">
+                <h3>Ayuda</h3>
+                <ul>
+                    <li><a href="#">Preguntas</a></li>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Pagos</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                </ul>
+            </div>
+
+            <div class="link">
+                <h3>Tienda</h3>
+                <ul>
+                    <li><a href="#">Novedades</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="#">Bienestar</a></li>
+                    <li><a href="#">Catálogo</a></li>
+                </ul>
+            </div>
+
+            <div class="link">
+                <h3>Redes</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com/profile.php?id=61566000243928" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/moraimalopezinuma" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/@moraimalopezinuma" target="_blank">TikTok</a></li>
+                    <li><a href="https://wa.me/51944953206" target="_blank">WhatsApp</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</footer>
+    
+    <script src="script.js"></script>
+<script>
+let carrito = [];
+
+document.addEventListener('DOMContentLoaded', function() {
+    const guardado = localStorage.getItem('carrito');
+    if (guardado) {
+        carrito = JSON.parse(guardado);
+        dibujarCarrito();
+    }
+
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('agregar-carrito')) {
+            e.preventDefault();
+            agregar(e.target);
+        }
+        if (e.target.id === 'vaciar-carrito') {
+            e.preventDefault();
+            carrito = [];
+            localStorage.removeItem('carrito');
+            dibujarCarrito();
+        }
+    });
+});
+
+function agregar(boton) {
+    const tarjeta = boton.closest('.box');
+    if (!tarjeta) return;
+
+    const producto = {
+        id: boton.getAttribute('data-id'),
+        nombre: tarjeta.querySelector('h3').textContent,
+        precio: tarjeta.querySelector('.precio').textContent,
+        imagen: tarjeta.querySelector('img').src,
+        cantidad: 1
+    };
+
+    const existe = carrito.find(p => p.id === producto.id);
+    existe ? existe.cantidad++ : carrito.push(producto);
+    
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    dibujarCarrito();
+}
+
+function dibujarCarrito() {
+    const cuerpo = document.querySelector('#lista-carrito tbody');
+    if (!cuerpo) return;
+    cuerpo.innerHTML = '';
+    carrito.forEach(item => {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td><img src="${item.imagen}" width="50" height="50" style="object-fit:contain;"></td>
+            <td>${item.nombre}</td>
+            <td>${item.precio}</td>
+            <td>${item.cantidad}</td>
+        `;
+        cuerpo.appendChild(fila);
+    });
+}
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
+</body>
+</html>
